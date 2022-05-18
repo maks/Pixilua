@@ -1,0 +1,3 @@
+pixilua1/make/*.o
+.vscode/*.log
+pixilua1/make/pixilua
