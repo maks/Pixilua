@@ -5,6 +5,9 @@
 #include "sundog.h"
 #include "sunvox_engine.h"
 #include "pixilua.h"
+#include <lua5.3/lua.h>
+#include <lua5.3/lualib.h>
+#include <lua5.3/lauxlib.h>
 
 // required by sundog:
 const char* g_app_name = "Pixilua " PIXILUA_VERSION_STR " (" __DATE__ ")";
@@ -22,4 +25,12 @@ const char* g_app_usage =
 
 int main(void) {
     printf("%s \n", g_app_usage);
+
+    lua_State *L = luaL_newstate();
+    luaL_openlibs(L);
+
+    luaL_dofile(L, "test.lua");
+
+    lua_close(L);
+    return 0;
 }

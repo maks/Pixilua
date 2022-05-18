@@ -41,7 +41,7 @@ install:
 	mv -f $(APPNAME) ../bin/linux_$(TARGET_ARCH)$(ARCH_SUFFIX)/$(APPNAME)$(APPNAME_SUFFIX)
 endif
 ifeq ($(TARGET_OS),linux_x11_opengl)
-    LIBS = -lX11 -lGL -lXext
+    LIBS = -lX11 -lGL -lXext -llua5.3
     SUNDOG_DEFINES = \
 	-DX11 \
 	-DOPENGL \
